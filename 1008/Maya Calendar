@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+	vector<string> haab_months = { "pop", "no", "zip", "zotz", "tzec", "xul", "yoxkin", "mol", "chen", 
+	"yax", "zac", "ceh", "mac", "kankin", "muan", "pax", "koyab", "cumhu", "uayet" };
+		
+	vector<string> tzolkin_day_names = { "imix", "ik", "akbal", "kan", "chicchan", "cimi", "manik", 
+	"lamat", "muluk", "ok", "chuen", "eb", "ben", "ix", "mem", "cib", "caban", "eznab", "canac", "ahau" };
+	int n = 0;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		int haab_day, haab_year;
+		string haab_month;
+		char dot;
+
+		cin >> haab_day >> dot >> haab_month >> haab_year;
+
+		int month_number = 0;
+		for (int j = 0; j < haab_months.size(); j++) {
+			if (haab_months[j] == haab_month) {
+				month_number = j;
+				break;
+			}
+		}
+		int day = (haab_year * 365) + (month_number * 20) + haab_day;
+		int tzolkin_day_name_number = day % 20;
+		int tzolkin_day_number = day % 13 + 1;
+		int tzolkin_year = day/260;
+		
+		string tzolkin_day_name;
+		
+		for (int k = 0; k < tzolkin_day_names.size(); k++) {
+			if (k == tzolkin_day_name_number) {
+				tzolkin_day_name = tzolkin_day_names[k];
+				break;
+			}
+		}
+		cout << tzolkin_day_number << " " << tzolkin_day_name << " " << tzolkin_year << "\n";
+	}
+
+	return 0;
+}
