@@ -9,7 +9,7 @@ struct Node {
 
 Node s[10000];
 int size = 1;
-int root = 0;
+int root = -1;
 
 void insert(int data) {
 
