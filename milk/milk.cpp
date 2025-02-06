@@ -10,17 +10,18 @@ PROG: milk
 
 using namespace std;
 
-// this array stores the first one, farmer's price
-int farmer_price[5000];
+struct Farmer {
+  int price;
+  int units;
+};
 
-// this array stores the second, units of milk
-int farmer_units[5000];
-
-bool compareFarmers(int i, int j) { return farmer_price[i] < farmer_price[j]; }
+bool compareFarmers(Farmer i, Farmer j) { return i.price < j.price; }
 
 int main() {
   ifstream fin("milk.in");
   ofstream fout("milk.out");
+
+  Farmer farmers[5000];
 
   int milk = 0;
   int farmers_number = 0;
@@ -28,25 +29,17 @@ int main() {
 
   fin >> milk >> farmers_number;
 
-  // this array stores the original order of the farmer's price before the sort
-  int original[farmers_number];
-
   for (int i = 0; i < farmers_number; i++) {
-    fin >> farmer_price[i] >> farmer_units[i];
+    fin >> farmers[i].price >> farmers[i].units;
   }
 
-  for (int i = 0; i < farmers_number; i++) {
-    original[i] = i;
-  }
-
-  sort(original, original + farmers_number, compareFarmers);
+  sort(farmers, farmers + farmers_number, compareFarmers);
 
   for (int i = 0; i < farmers_number; i++) {
     if (milk == 0) break;
 
-    int farmer_number_in_original = original[i];
-    int milk_to_buy = min(milk, farmer_units[farmer_number_in_original]);
-    total += milk_to_buy * farmer_price[farmer_number_in_original];
+    int milk_to_buy = min(milk, farmers[i].units);
+    total += milk_to_buy * farmers[i].price;
     milk -= milk_to_buy;
   }
 
@@ -54,4 +47,3 @@ int main() {
 
   return 0;
 }
-
