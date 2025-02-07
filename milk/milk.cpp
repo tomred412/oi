@@ -43,7 +43,7 @@ int main() {
     milk -= milk_to_buy;
   }
 
-  fout << total << endl;
+  fout << total << "\n";
 
   return 0;
 }
