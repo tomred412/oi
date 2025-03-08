@@ -13,11 +13,13 @@ struct cows {
   vector<int> counts;
 };
 
+cows cow;
+
+bool compare(int a, int b) { return cow.output[a] < cow.output[b]; }
+
 int main() {
   ofstream fout("pairup.out");
   ifstream fin("pairup.in");
-
-  cows cow;
 
   int n;
   fin >> n;
@@ -28,14 +30,22 @@ int main() {
     cow.counts.push_back(temp1);
     cow.output.push_back(temp2);
   }
-  for (int i = 0; i < n - 1; i++) {
-    for (int j = 0; j < n - i - 1; j++) {
-      if (cow.output[j] > cow.output[j + 1]) {
-        swap(cow.output[j], cow.output[j + 1]);
-        swap(cow.counts[j], cow.counts[j + 1]);
-      }
-    }
+
+  vector<int> temp(n);
+  for (int i = 0; i < n; i++) {
+    temp[i] = i;
   }
+  sort(temp.begin(), temp.end(), compare);
+
+  vector<int> sorted_o(n), sorted_c(n);
+  for (int i = 0; i < n; i++) {
+    sorted_o[i] = cow.output[temp[i]];
+    sorted_c[i] = cow.counts[temp[i]];
+  }
+
+  cow.output = sorted_o;
+  cow.counts = sorted_c;
+
   int maxi = 0;
 
   for (int i = 0, j = n - 1; i <= j;) {
