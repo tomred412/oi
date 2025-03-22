@@ -81,8 +81,8 @@ void search(int x, int y, int now) {
   if (dista[x][y] == 0 || now < dista[x][y]) dista[x][y] = now;
 
   if (maze[x - 1][y] == ' ') search(x - 2, y, now + 1);
-  if (maze[x][y - 1] == ' ') search(x, y - 2, now + 1);
   if (maze[x + 1][y] == ' ') search(x + 2, y, now + 1);
+  if (maze[x][y - 1] == ' ') search(x, y - 2, now + 1);
   if (maze[x][y + 1] == ' ') search(x, y + 2, now + 1);
 }
 
