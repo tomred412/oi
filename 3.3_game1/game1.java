@@ -22,6 +22,7 @@ public class game1 {
             sum[i + 1] += sum[i] + original[i];
         }
     }
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) throws FileNotFoundException, IOException {
         Scanner in = new Scanner(new File("game1.in"));
         PrintWriter out = new PrintWriter(new File("game1.out"));

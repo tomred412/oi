@@ -15,7 +15,8 @@ public class stall4 {
     static int cow_likes_count[] = new int[201];
     static int final_match[] = new int[201];
     static Boolean visited[] = new Boolean[201];
-    static int n, m;
+    static int n;
+    static int m;
     static int result;
 
     public static boolean solve(int cow) {
@@ -32,6 +33,7 @@ public class stall4 {
         }
         return false;
     }
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) throws FileNotFoundException, IOException {
         Scanner in = new Scanner(new File("stall4.in"));
         PrintWriter out = new PrintWriter(new File("stall4.out"));
