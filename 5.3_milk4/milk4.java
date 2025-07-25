@@ -44,7 +44,7 @@ public static void TryAll(int pos, int size, ArrayList<Integer> current) {
   TryAll(pos + 1, size, current);
   current.remove(current.size() - 1);
 
-  TryAll(pos + 1, size, current);  // dont include the current one
+  TryAll(pos + 1, size, current);
 }
 
 public static void main(String args[]) throws FileNotFoundException {
