@@ -14,7 +14,7 @@ using namespace std;
 
 int64_t cont;
 
-int64_t cxy[31][31];
+int64_t cxy[32][32];
 
 void choose() {
   cxy[0][0] = 0;
