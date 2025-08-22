@@ -39,7 +39,7 @@ int main() {
   }
 
   int memory[200002];
-  memset(memory, -1, sizeof(memory));
+  fill(memory, memory + 200002, -1);
 
   int best = 0;
   for (int i = 1; i < 2 * l; ++i) {
