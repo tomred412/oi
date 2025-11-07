@@ -5,9 +5,20 @@ PROG: stamps
 */
 
 #include <algorithm>
+#include <bitset>
+#include <cctype>
 #include <cmath>
+#include <cstring>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
+#include <iterator>
+#include <limits>
+#include <queue>
+#include <set>
+#include <string>
+#include <unordered_set>
+#include <utility>
 #include <vector>
 
 using namespace std;

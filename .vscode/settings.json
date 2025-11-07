@@ -49,7 +49,10 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "variant": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "unordered_set": "cpp",
+        "flat_map": "cpp",
+        "flat_set": "cpp"
     },
     "C_Cpp.default.compileCommands": [
         "clang++"
