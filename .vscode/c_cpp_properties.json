@@ -6,7 +6,7 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/opt/homebrew/Cellar/gcc/15.2.0/bin/g++-15",
+            "compilerPath": "/opt/homebrew/Cellar/gcc/15.2.0/bin/g++-17",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64"
