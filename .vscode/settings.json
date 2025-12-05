@@ -52,7 +52,13 @@
         "algorithm": "cpp",
         "unordered_set": "cpp",
         "flat_map": "cpp",
-        "flat_set": "cpp"
+        "flat_set": "cpp",
+        "__tree": "cpp",
+        "complex": "cpp",
+        "memory": "cpp",
+        "print": "cpp",
+        "sstream": "cpp",
+        "stack": "cpp"
     },
     "C_Cpp.default.compileCommands": [
         "clang++"
