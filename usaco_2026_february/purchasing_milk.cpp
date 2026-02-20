@@ -59,16 +59,16 @@ int main() {
     long long needed = queries[i];
     long long best = numeric_limits<long long>::max();
 
-    for (int i = buckets.size() - 1; i >= 0;
-         --i) {  // biggest to smallest, biggest always cheaper than combination
+    for (int j = buckets.size() - 1; j >= 0;
+         --j) {  // biggest to smallest, biggest always cheaper than combination
 
-      long long use = needed / buckets[i];
-      current_cost += use * costs[i];
-      needed -= use * buckets[i];
+      long long use = needed / buckets[j];
+      current_cost += use * costs[j];
+      needed -= use * buckets[j];
 
       long long prospect_best;
       if (needed > 0)
-        prospect_best = current_cost + costs[i];
+        prospect_best = current_cost + costs[j];
       else
         prospect_best = current_cost;
 
