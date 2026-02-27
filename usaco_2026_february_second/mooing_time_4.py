@@ -20,7 +20,7 @@ def main():
                         c = 'M'
                     else:
                         c = 'O'
-                    
+                        
                 if c == 'M':
                     answer[i] = 'M'
                 else:
